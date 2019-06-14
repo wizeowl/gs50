@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'retro';
+    src: url("font.ttf") format('truetype');
+}
+
+body {
+    display: flex;
+}
+
+canvas {
+    image-rendering: pixelated;
+    margin-left: auto;
+    margin-right: auto;
+}

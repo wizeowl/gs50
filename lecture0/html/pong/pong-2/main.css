@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'codeman';
+    src: url("codeman/font.ttf") format('truetype');
+}
+
+body {
+    display: flex;
+}
+
+canvas {
+    image-rendering: pixelated;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(2);
+}
