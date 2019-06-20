@@ -45,7 +45,7 @@ const SOUNDS = {
   WALL_HIT: new Audio('sounds/wall_hit.wav')
 };
 
-const WINNING_SCORE = 3;
+const WINNING_SCORE = 5;
 
 const FONTS = {
   TITLE: 'normal 25px retro',
