@@ -7,10 +7,10 @@ const ZOOM = 2.5;
 const GROUND_HEIGHT = 16 * ZOOM;
 const BACKGROUND_WIDTH = WINDOW_WIDTH * ZOOM;
 const BACKGROUND_HEIGHT = WINDOW_HEIGHT - GROUND_HEIGHT;
-const GRAVITY = .3;
 
-const randomSign = () => Math.random() < .5 ? -1 : 1;
-const sign = (n) => n < 0 ? -1 : 1;
+const JUMP_VECTOR_SIZE = 16;
+const WEIGHT_VECTOR = reverse(arrayOf(JUMP_VECTOR_SIZE).map((e, i) => ((i - 4) ** 3 * .005)));
+const GRAVITY = sum(WEIGHT_VECTOR) / 2;
 
 const STYLE = {};
 const KEYS = {
