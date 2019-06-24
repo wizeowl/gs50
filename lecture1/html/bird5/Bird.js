@@ -1,8 +1,8 @@
 class Bird {
-  constructor(jumpLength) {
+  constructor() {
     this.image = IMAGES.bird;
-    this.width = 57;
-    this.height = 36;
+    this.width = 76;
+    this.height = 48;
     this.x = CENTER - this.width / 2;
     this.y = MIDDLE - this.height / 2;
 

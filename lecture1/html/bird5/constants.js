@@ -1,0 +1,34 @@
+const WINDOW_WIDTH = 1280;
+const WINDOW_HEIGHT = 720;
+const MIDDLE = WINDOW_HEIGHT / 2;
+const CENTER = WINDOW_WIDTH / 2;
+const ZOOM = 2.5;
+
+const GROUND_HEIGHT = 16 * ZOOM;
+const BACKGROUND_WIDTH = WINDOW_WIDTH * ZOOM;
+const BACKGROUND_HEIGHT = WINDOW_HEIGHT - GROUND_HEIGHT;
+
+const JUMP_VECTOR_SIZE = 16;
+const WEIGHT_VECTOR = reverse(arrayOf(JUMP_VECTOR_SIZE).map((e, i) => ((i - 4) ** 3 * .005)));
+const GRAVITY = sum(WEIGHT_VECTOR) / 2;
+
+const PIPE_SPEED = 4;
+
+const STYLE = {};
+const KEYS = {
+  SPACE: ' '
+};
+const SOUNDS = {};
+const IMAGES = {
+  background: new Image(),
+  ground: new Image(),
+  bird: new Image(),
+  pipe: new Image(),
+};
+const FONTS = {};
+const MODES = {};
+
+IMAGES.background.src = 'background.png';
+IMAGES.ground.src = 'ground.png';
+IMAGES.bird.src = 'bird.png';
+IMAGES.pipe.src = 'pipe.png';
