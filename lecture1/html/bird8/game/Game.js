@@ -3,6 +3,7 @@ class Game {
     this.title = new Title();
     this.background = new Background();
     this.ground = new Ground();
+    this.scorePanel = new ScorePanel();
     this.init();
 
     this.ctx = ctx;

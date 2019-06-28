@@ -23,6 +23,7 @@ class PlayState extends BaseState {
   render(ctx) {
     this.game.background.render(ctx);
     this.game.pipes.render(ctx);
+    this.game.scorePanel.render(ctx, this.game.score);
     this.game.bird.render(ctx);
     this.game.ground.render(ctx);
   }
