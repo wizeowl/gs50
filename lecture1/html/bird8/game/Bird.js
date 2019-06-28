@@ -12,6 +12,10 @@ class Bird extends Box {
     this.activations = arrayOf(JUMP_VECTOR_SIZE, 0);
   }
 
+  passed(pipePair) {
+    return this.edges.left > pipePair.leftEdge;
+  }
+
   monitorJump() {
     if (isDown(KEYS.SPACE)) {
       this.activations = [1].concat(this.activations).slice(0, JUMP_VECTOR_SIZE);

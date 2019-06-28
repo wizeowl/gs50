@@ -10,13 +10,19 @@ class Game {
     this.stateMachine = new StateMachine({
       [STATES.TITLE]: new TitleScreenState(this),
       [STATES.PLAY]: new PlayState(this),
+      [STATES.SCORE]: new GameOverState(this),
       [STATES.PAUSE]: new PauseScreenState(this)
     });
 
     this.stateMachine.change(STATES.TITLE);
   }
 
+  get score() {
+    return this.pipes.score;
+  }
+
   init() {
+    this.gameOver = new GameOver();
     this.bird = new Bird();
     this.pipes = new Pipes();
   }

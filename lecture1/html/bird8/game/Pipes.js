@@ -3,11 +3,23 @@ class Pipes {
     this.interval = 1600;
     this.counter = 0;
     this.pipePairs = [];
+    this.score = 0;
   }
 
   get allPipes() {
     return this.pipePairs
       .reduce((acc, { pipes: { top, bottom } }) => acc.concat([top, bottom]), []);
+  }
+
+  checkScore(bird) {
+    this.pipePairs
+      .filter(pair => !pair.scored)
+      .forEach(pair => {
+        if (bird.passed(pair)) {
+          pair.scored = true;
+          this.score++;
+        }
+      });
   }
 
   addPipePair() {

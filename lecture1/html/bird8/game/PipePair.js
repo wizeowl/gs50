@@ -10,6 +10,11 @@ class PipePair {
     };
     this.pipes.top.orientation = ORIENTATIONS.INVERTED;
     this.speed = PIPE.SPEED;
+    this.scored = false;
+  }
+
+  get leftEdge() {
+    return this.x + PIPE.WIDTH;
   }
 
   update(dt) {

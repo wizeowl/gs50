@@ -9,12 +9,14 @@ class PlayState extends BaseState {
       .some(pipe => this.game.bird.collides(pipe));
 
     if (collision) {
-      this.game.stateMachine.change(STATES.TITLE);
+      this.game.stateMachine.change(STATES.SCORE);
     } else {
       this.game.background.update(dt);
       this.game.bird.update(dt);
       this.game.pipes.update(dt);
       this.game.ground.update(dt);
+
+      this.game.pipes.checkScore(this.game.bird);
     }
   }
 

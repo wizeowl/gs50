@@ -45,7 +45,8 @@ const ORIENTATIONS = {
 const STATES = {
   TITLE: 0,
   PLAY: 1,
-  PAUSE: 2
+  SCORE: 2,
+  PAUSE: 3
 };
 
 IMAGES.background.src = 'images/background.png';
