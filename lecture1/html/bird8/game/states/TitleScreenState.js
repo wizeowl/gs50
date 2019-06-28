@@ -1,9 +1,14 @@
 class TitleScreenState extends BaseState {
+  enter() {
+    this.idle = 0;
+  }
+
   update(dt) {
     this.game.background.update(dt);
     this.game.ground.update(dt);
+    this.idle += dt;
 
-    if (isDown(KEYS.ENTER)) {
+    if (isDown(KEYS.ENTER) && this.idle > 512) {
       this.game.stateMachine.change(STATES.PLAY);
     }
   }
