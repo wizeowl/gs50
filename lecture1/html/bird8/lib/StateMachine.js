@@ -16,7 +16,7 @@ class StateMachine {
   }
 
   change(stateName, enterParams) {
-    if (!this.state[stateName]) {
+    if (!this.states[stateName]) {
       console.warn(`unknown state: ${stateName}`);
     } else {
       this.current.exit();

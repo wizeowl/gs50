@@ -1,36 +1,32 @@
 class Game {
   constructor(ctx) {
+    this.title = new Title();
     this.background = new Background();
     this.ground = new Ground();
+    this.init();
+
+    this.ctx = ctx;
+
+    this.stateMachine = new StateMachine({
+      [STATES.TITLE]: new TitleScreenState(this),
+      [STATES.PLAY]: new PlayState(this),
+      [STATES.PAUSE]: new PauseScreenState(this)
+    });
+
+    this.stateMachine.change(STATES.TITLE);
+  }
+
+  init() {
     this.bird = new Bird();
     this.pipes = new Pipes();
-
-    this.mode = MODES.PLAY;
-    this.ctx = ctx;
   }
 
   run(dt) {
-    if (this.mode === MODES.PLAY) {
-      this.play(dt);
-    }
-  }
-
-  play(dt) {
-    this.background.render(this.ctx);
-    this.pipes.render(this.ctx);
-    this.bird.render(this.ctx);
-    this.ground.render(this.ctx);
-
-    const collision = this.pipes.allPipes
-      .some(pipe => this.bird.collides(pipe));
-
-    if (collision) {
-      this.mode = MODES.PAUSE;
+    if (isDown(KEYS.ESCAPE)) {
+      window.close();
     }
 
-    this.background.update(dt);
-    this.bird.update(dt);
-    this.pipes.update(dt);
-    this.ground.update(dt);
+    this.stateMachine.render(this.ctx);
+    this.stateMachine.update(dt);
   }
 }

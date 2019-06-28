@@ -1,5 +1,6 @@
-class Ground {
+class Ground extends Box{
   constructor() {
+    super();
     this.width = WINDOW_WIDTH * ZOOM;
     this.height = GROUND_HEIGHT;
     this.y = BACKGROUND_HEIGHT;

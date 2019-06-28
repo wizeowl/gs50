@@ -10,7 +10,7 @@ const BACKGROUND_HEIGHT = WINDOW_HEIGHT - GROUND_HEIGHT;
 
 const JUMP_VECTOR_SIZE = 16;
 const WEIGHT_VECTOR = reverse(arrayOf(JUMP_VECTOR_SIZE).map((e, i) => ((i - 4) ** 3 * .005)));
-const GRAVITY = sum(WEIGHT_VECTOR) / 2;
+const GRAVITY = sum(WEIGHT_VECTOR) / 4;
 
 const PIPE = {
   SPEED: 4,
@@ -26,9 +26,10 @@ const BIRD = {
   HEIGHT: 48
 };
 const COLLISION_TOLERENCE = 4;
-const STYLE = {};
 const KEYS = {
-  SPACE: ' '
+  SPACE: ' ',
+  ENTER: 'Enter',
+  ESCAPE: 'Escape'
 };
 const SOUNDS = {};
 const IMAGES = {
@@ -41,10 +42,10 @@ const ORIENTATIONS = {
   NORMAL: 0,
   INVERTED: 1
 };
-const FONTS = {};
-const MODES = {
-  PLAY: 0,
-  PAUSE: 1
+const STATES = {
+  TITLE: 0,
+  PLAY: 1,
+  PAUSE: 2
 };
 
 IMAGES.background.src = 'images/background.png';

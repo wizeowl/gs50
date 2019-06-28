@@ -1,4 +1,8 @@
 class BaseState {
+  constructor(game) {
+    this.game = game;
+  }
+
   init() {
   }
 
