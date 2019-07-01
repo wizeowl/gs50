@@ -46,8 +46,7 @@ const STATES = {
   TITLE: 0,
   PLAY: 1,
   SCORE: 2,
-  COUNTDOWN: 3,
-  PAUSE: 4
+  PAUSE: 3
 };
 
 IMAGES.background.src = 'images/background.png';

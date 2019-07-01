@@ -1,0 +1,25 @@
+class PipePair {
+  constructor() {
+    this.x = WINDOW_WIDTH;
+    this.bottomY = WINDOW_HEIGHT - randomIn(PIPE.MIN_VISIBLE_HEIGHT, PIPE.MAX_VISIBLE_HEIGHT);
+    this.topY = -this.bottomY + PIPE.GAP;
+
+    this.pipes = {
+      top: new Pipe(this.x, this.topY),
+      bottom: new Pipe(this.x, this.bottomY)
+    };
+    this.pipes.top.orientation = ORIENTATIONS.INVERTED;
+    this.speed = PIPE.SPEED;
+    this.scored = false;
+  }
+
+  get leftEdge() {
+    return this.x + PIPE.WIDTH;
+  }
+
+  update(dt) {
+    this.x -= this.speed;
+    this.pipes.top.x = this.x;
+    this.pipes.bottom.x = this.x;
+  }
+}
